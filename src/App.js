@@ -3,18 +3,20 @@ import Navbar from "./componets/inc/Navbar";
 import Home from "./componets/pages/Home";
 import About from "./componets/pages/About";
 import Contact from "./componets/pages/Contact";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div>
-        <Navbar />
-        <Home />
-        <About />
-        <Contact />
+      <Navbar />
+        <Routes>
+          <Route path="/home" element={<Home/>}></Route>
+          <Route path="/about" element={<About/>}></Route>
+          <Route path="/contact" element={<Contact/>}></Route>
+        </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
